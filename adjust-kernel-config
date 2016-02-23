@@ -1,0 +1,11 @@
+#!/bin/bash
+set -ex
+
+sed -i 's/\# CONFIG_BRIDGE .*/CONFIG_BRIDGE\=m/' .config
+sed -i 's/\# CONFIG_BRIDGE_NETFILTER .*/CONFIG_BRIDGE_NETFILTER\=m/' .config
+sed -i 's/\# CONFIG_IP_NF_FILTER .*/CONFIG_IP_NF_FILTER\=m/' .config
+
+sed -i 's/\# CONFIG_NETFILTER_XT_MATCH_PHYSDEV .*/CONFIG_NETFILTER_XT_MATCH_PHYSDEV\=n/' .config
+sed -i 's/\# CONFIG_IP_NF_TARGET_REJECT .*/CONFIG_IP_NF_TARGET_REJECT\=n/' .config
+sed -i 's/\# CONFIG_BRIDGE_NF_EBTABLES  .*/CONFIG_BRIDGE_NF_EBTABLES\=n/' .config
+sed -i 's/\# CONFIG_BRIDGE_IGMP_SNOOPING   .*/CONFIG_BRIDGE_IGMP_SNOOPING\=n/' .config
